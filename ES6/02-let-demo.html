@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .page-header {
+      border-bottom: 1px solid #eee;
+    }
+
+    .item {
+      float: left;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      border: 1px solid rgb(0, 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="page-header">点击切换颜色</h2>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <script>
+    // 获取元素
+    let items = document.querySelectorAll('.item');
+
+    // 使用var定义变量
+    // var定义的变量没有块级作用域，当循环完成后var的值为3
+    // 点击元素无法找到下标为3的对应元素
+    // for (var i = 0; i < items.length; i++) {
+    //   items[i].addEventListener('click', function () {
+    //     items[i].style.backgroundColor = 'skyblue';
+    //   })
+    // }
+
+    // 使用let let定义的变量有块级作用域
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', function () {
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.backgroundColor = '';
+        }
+        items[i].style.backgroundColor = 'skyblue';
+      })
+    }
+
+  </script>
+</body>
+
+</html>
