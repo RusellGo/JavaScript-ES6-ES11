@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+     * 箭头函数
+     */
+    const fn = (a, b) => {
+      return a + b;
+    };
+    console.log(fn(1, 1));
+    console.log('---------------');
+
+    // 1.this是静态的 this始终指向函数声明时所在作用域下的this的值
+    function getName() {
+      console.log(this.name);
+    }
+    let getName2 = () => {
+      console.log(this.name);
+    }
+    // 设置window对象的name属性
+    window.name = '丙';
+    const hero = {
+      name: 'Simira'
+    }
+    getName(); // 丙
+    getName2(); // 丙
+    console.log('---------------');
+
+    // call方法调用
+    getName.call(hero); // Simira
+    getName2.call(hero); // 丙
+    console.log('---------------');
+
+    // 2.不能作为构造函数 实例化对象
+    // let Person = (name, age) => {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // let one = new Person('丙', 800);
+
+    // 3.不能使用arguments变量
+    // let prama = () => {
+    //   console.log(arguments);
+    // }
+    // prama(1);
+
+    // 4.箭头函数的简写
+    // 1)省略小括号 有且只有一个参数时
+    let num = a => {
+      return a;
+    }
+    console.log(num(1));
+    console.log('---------------');
+    // 2)省略花括号和return关键字 只有一条语句且返回该语句时
+    let love = name => name;
+    console.log(love('丙'));
+    console.log('---------------');
+  </script>
+</body>
+
+</html>
