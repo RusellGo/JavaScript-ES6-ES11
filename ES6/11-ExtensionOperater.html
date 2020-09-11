@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // ... 扩展运算符能将 数组 转换为以逗号分隔的 参数序列
+    const hero = ['Kaisa', 'Swein', 'VN', 'Simira'];
+    function play() {
+      console.log(arguments);
+    }
+    play(hero);
+    play(...hero);
+  </script>
+</body>
+
+</html>

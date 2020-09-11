@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+    * ES6 引入rest参数，用于获取函数的实参，用来代替arguments
+    */
+    // ES5 获取实参的方法
+    function date() {
+      console.log(arguments);
+    }
+    date('丙', 'Simira', '土荒笼');
+
+    // ES6 获取实参的方法
+    function hero(...args) {
+      console.log(args);
+    }
+    hero('Swein', 'Kaisa');
+
+    // rest 参数必须放到参数最后
+    function fn(a, b, ...args) {
+      console.log(a, b, args);
+    }
+    fn(1, 2, 3, 4, 5);
+  </script>
+</body>
+
+</html>

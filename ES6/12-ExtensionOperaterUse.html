@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script>
+    // 扩展运算符应用
+    // 1.数组合并
+    const one = ['Evelyn'];
+    const three = ['Kaisa', ' Akhasi', 'Ahri'];
+    // const KDA = one.concat(three);
+    const KDA = [...one, ...three];
+    console.log(KDA);
+
+    // 2.数组克隆
+    const a = ['厄运小姐', '伊泽瑞尔', '卡莎'];
+    const b = [...a];
+    console.log(b);
+
+    // 3.将伪数组转换为真正的数组
+    const divs = document.querySelectorAll('div');
+    console.log(divs);
+    const divArr = [...divs];
+    console.log(divArr);
+  </script>
+</body>
+
+</html>
