@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Symbol 向对象中添加方法
+    let game = {
+      name: '英雄联盟',
+      up() {
+        console.log('上分');
+      },
+      down() {
+        console.log('掉段');
+      }
+    }
+    // 创建一个对象
+    let methods = {
+      up: Symbol(),
+      down: Symbol()
+    }
+    game[methods.up] = function () {
+      console.log('超神');
+    }
+    game[methods.down] = function () {
+      console.log('超鬼');
+    }
+    console.log(game);
+
+    // 
+    let game1 = {
+      name: '绝地求生',
+      [Symbol('shot')]: function () {
+        console.log('射击');
+      },
+      [Symbol('boom')]: function () {
+        console.log('爆炸');
+      }
+    }
+    console.log(game1);
+  </script>
+</body>
+
+</html>
