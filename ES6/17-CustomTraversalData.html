@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 迭代器应用 自定义遍历数据
+    const hero = {
+      name: '卡莎',
+      status: [
+        '体表活肤',
+        '艾卡西亚暴雨',
+        '虚空锁敌',
+        '极限超载',
+        '猎手本能'
+      ],
+      [Symbol.iterator]() {
+        // 索引变量
+        let index = 0;
+        let _this = this;
+        return {
+          next: function () {
+            if (index < _this.status.length) {
+              const result = { value: _this.status[index], done: false };
+              // 下标自增
+              index++;
+              return result;
+            } else {
+              return { value: undefined, done: true };
+            }
+          }
+        };
+      }
+    }
+
+    // 遍历对象
+    for (let item of hero) {
+      console.log(item);
+    }
+  </script>
+</body>
+
+</html>

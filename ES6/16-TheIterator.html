@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 迭代器
+    // 声明一个数组
+    const hero = ['Kaisa', 'VN', 'Swein', 'Simira'];
+
+    // 使用for...of遍历数组 有迭代器的数据结构都能使用for...of遍历
+    for (let item of hero) {
+      console.log(item);
+    }
+    console.log(hero);
+
+    let iterator = hero[Symbol.iterator]();
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+  </script>
+</body>
+
+</html>
