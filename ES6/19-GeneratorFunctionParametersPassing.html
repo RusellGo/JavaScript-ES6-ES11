@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function* gen(arg) {
+      console.log(arg);
+      let B = yield 111;
+      console.log(B);
+      let C = yield 222;
+      console.log(C);
+      let D = yield 333;
+      console.log(D);
+    }
+    // 执行获取迭代器对象
+    let iterator = gen('A');
+    // 给next()传参 上一部分的yield语句整体作为传入的参数返回
+    console.log(iterator.next());
+    console.log(iterator.next('B'));
+    console.log(iterator.next('C'));
+    console.log(iterator.next('D'));
+  </script>
+</body>
+
+</html>

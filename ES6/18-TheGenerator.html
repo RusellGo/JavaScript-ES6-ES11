@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 生成器 其实是一个特殊的函数
+    // 异步编程 纯回调函数
+    // yield 函数代码的分隔符
+    function* gen() {
+      console.log('hello generator');
+      console.log(1);
+      yield 'Kaisa';
+      console.log(2);
+      yield 'Simira';
+      console.log(3);
+      yield 'VN';
+      console.log(4);
+    }
+    // 是一个迭代器
+    let iterator = gen();
+    console.log(iterator);
+    console.log('-----------------');
+    iterator.next();
+    iterator.next();
+    iterator.next();
+    iterator.next();
+    console.log('-----------------');
+    for (let v of gen()) {
+      console.log(v);
+    }
+  </script>
+</body>
+
+</html>
