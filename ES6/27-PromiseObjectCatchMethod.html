@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Promise对象catch方法
+    const p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // 设置 p 的状态为失败
+        reject('出错了');
+      }, 1000);
+    })
+    p.catch(reason => {
+      console.error(reason);
+    })
+  </script>
+</body>
+
+</html>
