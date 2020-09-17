@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Map 键类型可以是任何类型
+    let m = new Map();
+
+    // 添加元素
+    m.set('one', 'time');
+    m.set('two', function () {
+      console.log('money');
+    });
+    let key = {
+      three: 'life'
+    }
+    m.set(key, ['life']);
+    console.log(m);
+
+    // size
+    console.log(m.size);
+
+    // 删除
+    m.delete('two');
+    console.log(m);
+
+    // 获取
+    console.log(m.get('one'));
+    console.log(m.get(key));
+
+    // 遍历
+    for (let v of m) {
+      console.log(v);
+    }
+
+    // 清空
+    m.clear();
+    console.log(m);
+  </script>
+</body>
+
+</html>

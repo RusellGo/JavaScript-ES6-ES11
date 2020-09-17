@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 声明一个set
+    let s = new Set();
+    console.log(s, typeof s);
+
+    let s2 = new Set(['time', 'money', 'life', 'money']);
+    console.log(s2);
+    // 元素个数
+    console.log(s2.size);
+    // 添加元素
+    s2.add('dream');
+    s2.add('setback');
+    s2.add('devastated');
+    console.log(s2);
+    // 删除元素
+    s2.delete('devastated');
+    console.log(s2);
+    // 检测
+    console.log(s2.has('setback'));
+    // 遍历Set
+    for (let v of s2) {
+      console.log(v);
+    }
+    // 清空
+    s2.clear();
+    console.log(s2);
+  </script>
+</body>
+
+</html>

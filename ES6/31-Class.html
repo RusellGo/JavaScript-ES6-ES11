@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // class
+    // ES5 构造函数
+    function Phone(brand, price) {
+      this.brand = brand;
+      this.price = price;
+    }
+    // 添加方法
+    Phone.prototype.call = function () {
+      console.log('能打电话');
+    }
+    // 实例化对象
+    let Honor = new Phone('honor V10', 1799);
+    Honor.call();
+    console.log(Honor);
+
+    // ES6 class
+    class Hero {
+      // 构造方法
+      constructor(name, skills) {
+        this.name = name;
+        this.skills = skills;
+      }
+
+      // 不能使用ES5的方法
+      kill() {
+        console.log(this.name + '将消灭敌人');
+        if (Array.isArray(this.skills)) {
+          this.skills.forEach(item => {
+            console.log(item);
+          });
+        }
+        if (this.skills instanceof Object) {
+          this.skills.forEach(item => {
+            console.log(item);
+          });
+        }
+        // 通用方法
+        if (Object.prototype.toString.call(this.skills) == '[object Array]') {
+          this.skills.forEach(item => {
+            console.log(item);
+          });
+        }
+      }
+    }
+    let hero = new Hero('Kaisa', ['体表活肤', '爱卡西亚暴雨', '虚空锁敌', '极限超载', '猎手本能']);
+    hero.kill();
+    console.log(hero);
+  </script>
+</body>
+
+</html>
