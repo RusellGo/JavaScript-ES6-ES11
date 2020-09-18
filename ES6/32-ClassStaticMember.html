@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Phone() {
+
+    }
+    Phone.prototype.size = '6.5';
+
+    Phone.name = '手机';
+    Phone.change = function () {
+      console.log('Change the world');
+    }
+
+    let V10 = new Phone();
+    console.log(V10.size);
+    console.log(V10.name);
+
+    class Hero {
+      static name = 'Kaisa';
+      static kill() {
+        console.log('艾卡西亚暴雨');
+      }
+    }
+
+    let VN = new Hero();
+    console.log(VN.name);
+  </script>
+</body>
+
+</html>

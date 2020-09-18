@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 父类
+    function Phone(brand, price) {
+      this.brand = brand;
+      this.price = price;
+    }
+    Phone.prototype.call = function () {
+      console.log('打电话');
+    }
+
+    // 智能手机
+    function SmartPhone(brand, price, color, size) {
+      Phone.call(this, brand, price);
+      this.color = color;
+      this.size = size;
+    }
+    // 继承
+    SmartPhone.prototype = new Phone;
+    SmartPhone.prototype.constructor = SmartPhone;
+
+    // 声明子类的方法
+    SmartPhone.prototype.photo = function () {
+      console.log('能拍照');
+    }
+    SmartPhone.prototype.playGame = function () {
+      console.log('能玩游戏');
+    }
+    // 实例化对象
+    const honor = new SmartPhone('V10', 1799, 'blue', '6.5');
+    console.log(honor.brand);
+    console.log(honor.price);
+    console.log(honor.color);
+    console.log(honor.size);
+    honor.call();
+    honor.photo();
+    honor.playGame();
+  </script>
+</body>
+
+</html>

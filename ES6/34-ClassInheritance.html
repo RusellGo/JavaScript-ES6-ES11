@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // class 继承
+    class Phone {
+      constructor(brand, price) {
+        this.brand = brand;
+        this.price = price;
+      }
+
+      // 父类的成员属性
+      call() {
+        console.log('能打电话');
+      }
+    }
+
+    class SmartPhone extends Phone {
+      constructor(brand, price, color, size) {
+        super(brand, price);
+        this.color = color;
+        this.size = size;
+      }
+
+      photo() {
+        console.log('能拍照');
+      }
+      playGame() {
+        console.log('能玩游戏');
+      }
+    }
+
+    let honor = new SmartPhone('V10', 1799, 'blue', '6.5');
+    console.log(honor.brand);
+    console.log(honor.price);
+    console.log(honor.color);
+    console.log(honor.size);
+    honor.call();
+    honor.photo();
+    honor.playGame();
+  </script>
+</body>
+
+</html>
