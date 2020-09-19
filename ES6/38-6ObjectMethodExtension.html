@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.Object.js 判断两个值是否完全相等 类似 === 但也有不同
+    console.log(Object.is(120, 120));
+    console.log(Object.is(120, 121));
+    console.log(Object.is(NaN, NaN));
+    console.log(NaN === NaN);
+
+    // Object.asign 对象的合并
+    console.log('-----');
+    const obj1 = {
+      host: 'localhost',
+      port: 8080,
+      name: 'root',
+      pass: 'root',
+      test: 'test'
+    }
+    const obj2 = {
+      host: 'http://www.simira.com',
+      port: '8081',
+      name: 'Simira',
+      pass: 'Simira'
+    }
+    console.log(Object.assign(obj1, obj2));
+
+    // 3.Object.setPrototypeOf 设置原型对象 Object.getPrototypeOf
+    console.log('-----');
+    const hero1 = {
+      name: 'Kaisa'
+    }
+    const heroGroup = {
+      heros: ['VN', 'Swein', 'Ezreal']
+    }
+
+    Object.setPrototypeOf(hero1, heroGroup);
+    console.log(Object.getPrototypeOf(hero1));
+    console.log(hero1);
+  </script>
+</body>
+
+</html>

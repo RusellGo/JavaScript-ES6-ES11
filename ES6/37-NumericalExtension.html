@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.Number.EPSILON 是JavaScript表示的最小精度 EPSILON的值接近于 2.2204460492503130808472633361816E-16
+    console.log(0.1 + 0.2 === 0.3);
+    function equal(a, b) {
+      if (Math.abs(a - b) < Number.EPSILON) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    console.log(equal(0.1 + 0.2, 0.3));
+
+    // 2.二进制和八进制
+    console.log('------------');
+    let i = 0b1010;
+    console.log(i);
+    let j = 0o777;
+    console.log(j);
+    let k = 100;
+    console.log(k);
+    let l = 0xff;
+    console.log(l);
+
+    // 3.Number.isFinite 检测一个数值是否为有限数
+    console.log('------------');
+    console.log(Number.isFinite(100));
+    console.log(Number.isFinite(100 / 0));
+    console.log(Number.isFinite(Infinity));
+
+    // 4.Number
+    console.log('------------');
+    console.log(Number.isNaN(1));
+    console.log(Number.isNaN('1'));
+    console.log(Number.isNaN('1' - 0));
+    console.log(Number.isNaN(2 - '1'));
+
+    // 5.Number.parsInt Number.parseFloat字符串转整数
+    console.log('------------');
+    console.log(Number.parseInt('123ab'));
+    console.log(Number.parseInt('ab123ab'));
+    console.log(Number.parseFloat('5.2453abc'));
+    console.log(Number.parseFloat('abc5.2453abc'));
+
+    // 6.Number.isInteger 判断一个数是否为整数
+    console.log('------------');
+    console.log(Number.isInteger(1));
+    console.log(Number.isInteger(1.2));
+
+    // 7.Math.trunc 将数字的小数部分去掉
+    console.log('------------');
+    console.log(Math.trunc(1));
+    console.log(Math.trunc(3.1415926));
+
+    // 8.Math.sign 判断一个数到底是正数 负数还是零
+    console.log('------------');
+    console.log(Math.sign(100));
+    console.log(Math.sign(0));
+    console.log(Math.sign(-100));
+  </script>
+</body>
+
+</html>
