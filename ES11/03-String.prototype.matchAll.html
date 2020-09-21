@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = `
+      <ul>
+        <li>
+          <a>罗小黑战记</a>
+          <p>上映时间：2019-8-16</p>
+        </li>
+        <li>
+          <a>肖申克的救赎</a>
+          <p>上映时间：1994-09-10</p>
+        </li>  
+      </ul>
+    `;
+
+    const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg;
+    const result = str.matchAll(reg);
+
+    // console.log(result);
+    // for (let v of result) {
+    //   console.log(v);
+    // }
+
+    const arr = [...result];
+    console.log(arr);
+  </script>
+</body>
+
+</html>

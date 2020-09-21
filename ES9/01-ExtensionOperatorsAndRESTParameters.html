@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Rest参数与spread扩展运算符在ES6中已经引入，不过ES6中只针对数组
+    // ES9中为对象提供了像数组一样的rest参数和扩展运算符
+
+    function connect({ host, port, ...user }) {
+      console.log(host);
+      console.log(port);
+      console.log(user);
+    }
+
+    connect({
+      host: '127.0.0.1',
+      port: 3306,
+      username: 'root',
+      password: 'root',
+      type: 'super'
+    })
+
+    const passive = {
+      p: '体表活肤'
+    }
+    const skillOne = {
+      q: '艾卡西亚暴雨'
+    }
+    const skillTwo = {
+      w: '虚空锁敌'
+    }
+    const skillThree = {
+      e: '极限超载'
+    }
+    const skillFour = {
+      r: '猎手本能'
+    }
+
+    const Kaisa = { ...passive, ...skillOne, ...skillTwo, ...skillThree, ...skillFour };
+    console.log(Kaisa);
+  </script>
+</body>
+
+</html>

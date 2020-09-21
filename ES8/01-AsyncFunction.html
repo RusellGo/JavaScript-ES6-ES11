@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // async函数的返回值为promise对象
+    // promise对象的结果由async函数执行的返回值决定
+
+    async function fn() {
+      // 1.如果返回值不是一个promise类型的对象，那么返回值则是一个成功状态的promise对象
+      // return 'Kaisa'
+
+      // 2.抛出错误 返回结果是一个封装好的表示失败状态的promise对象
+      // throw new Error('出错了');
+
+      // 3.返回结果是一个promise对象
+      return new Promise((resolve, reject) => {
+        resolve('成功了');
+      })
+    }
+    const result = fn();
+    console.log(result);
+    result.then(value => console.log(value), reason => console.log(reason));
+  </script>
+</body>
+
+</html>

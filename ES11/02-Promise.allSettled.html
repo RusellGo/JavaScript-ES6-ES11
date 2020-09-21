@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Promise.allSettled peomise状态始终为成功 且能得到每一个promise的状态和值
+    const p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('商品数据-1');
+      }, 1000);
+    });
+    const p2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('商品数据-2');
+        // reject('出错了');
+      }, 1000);
+    });
+    const result = Promise.allSettled([p1, p2]);
+    console.log(result);
+
+    // promise都成功状态才为成功 否则为失败 且只返回成功的值
+    const result1 = Promise.all([p1, p2]);
+    console.log(result1);
+  </script>
+</body>
+
+</html>

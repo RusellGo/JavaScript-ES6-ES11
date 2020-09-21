@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 正则扩展-命名捕获分组
+
+    let str = '<a href="http://www.taobao.com">淘宝</a>'
+    // 提取 url 与 标签文本
+    const reg = /<a href="(.*)">(.*)<\/a>/;
+    const result = reg.exec(str);
+    console.log(result);
+    console.log(result[1], result[2]);
+
+    // ES9命名捕获分组
+    let str1 = '<a href="http://www.taobao.com">淘宝</a>';
+    const reg1 = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;
+    const result1 = reg1.exec(str1);
+    console.log(result1);
+    console.log(result1.groups.url, result1.groups.text);
+  </script>
+</body>
+
+</html>

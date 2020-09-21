@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // flat 将多维数组转化为低维数组 
+    const arr = [1, 2, 3, [4, 5, [6]]];
+    console.log(arr.flat(2));
+
+    // flatMap 类似flat和map方法的结合 对元素操作后再扁平化
+    const arr1 = [1, 2, 3, 4];
+    const result = arr1.flatMap(item => [item * 2]);
+    console.log(result);
+  </script>
+</body>
+
+</html>

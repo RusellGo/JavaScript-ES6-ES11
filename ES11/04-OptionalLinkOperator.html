@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 可选链操作符 ?. 没传入特定值不会报错 而是返回undefined
+    function main(config) {
+      // const dbHost = config && config.db && config.db.host;
+      // console.log(dbHost);
+
+      const dbHost = config?.db?.host;
+      console.log(dbHost);
+    }
+    main({
+      db: {
+        host: '192.168.1.251',
+        username: 'root',
+      },
+      cache: {
+        host: '192.168.1.252',
+        username: 'admin',
+      }
+    });
+    main();
+  </script>
+</body>
+
+</html>
